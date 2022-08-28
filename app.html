@@ -43,14 +43,7 @@ margin-left: 5px;
 font-size: 110px;
 text-align: center;
 }
-#ms{
-width: 150px;
-height: 150px;
-background-color: rgb(162, 180, 21);
-float: left;
-margin-left: 5px;
-font-size: 80px;
-text-align:center;}
+
 body{
 background-image:url("https://cdn.mos.cms.futurecdn.net/bSjYjmCpFi8HRSDCMN2U7B.jpg");
 background-repeat: no-repeat;
@@ -82,11 +75,10 @@ background-size: cover;
 
 <script>
 var date=new Date();
-var saat,dakika,saniye,ms;
+var saat,dakika,saniye;
 saat=date.getHours();
 dakika=date.getMinutes();
 saniye=date.getSeconds();
-ms=date.getMilliseconds();
 
 setInterval(time,1000);
 function time(){
