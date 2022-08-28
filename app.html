@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dijital saat</title>
+    <link rel="stylesheet" href="app.css">
+
+    <style>
+    
+ #div1{width: 50%;
+height: auto;
+background-color: rgb(76, 76, 81); 
+top: 220px;
+left: 510px;
+position: relative;}
+#saat{
+width: 150px;
+height: 150px;
+background-color: rgb(200, 200, 248);
+float: left;
+font-size: 110px;
+text-align: center;
+color:black;
+
+}
+#dakika{
+width: 150px;
+height: 150px;
+background-color: rgb(200, 200, 248);
+float: left;
+margin-left: 5px;
+font-size: 110px;
+text-align: center;
+}
+#saniye{
+width: 150px;
+height: 150px;
+background-color: rgb(200, 200, 248);
+float: left;
+margin-left: 5px;
+font-size: 110px;
+text-align: center;
+}
+#ms{
+width: 150px;
+height: 150px;
+background-color: rgb(162, 180, 21);
+float: left;
+margin-left: 5px;
+font-size: 80px;
+text-align:center;}
+body{
+background-image:url("https://cdn.mos.cms.futurecdn.net/bSjYjmCpFi8HRSDCMN2U7B.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="containeer"> 
+
+<div id="div1">
+    <div class="saat" id="saat"> </div> 
+    <div class="saat" id="dakika"></div>
+    <div id="saniye"></div> 
+ </div>
+
+
+</div>
+
+
+
+
+
+<script>
+var date=new Date();
+var saat,dakika,saniye,ms;
+saat=date.getHours();
+dakika=date.getMinutes();
+saniye=date.getSeconds();
+ms=date.getMilliseconds();
+
+setInterval(time,1000);
+function time(){
+
+    document.getElementById("saat").innerHTML=saat;
+    document.getElementById("dakika").innerHTML=dakika;
+    document.getElementById("saniye").innerHTML=saniye;
+    saniye++;
+    if(saniye==61){
+        if(dakika !=59){
+            dakika++;} 
+            else {
+                dakika=0
+            }  
+    saniye=0;
+    }
+    if(dakika==59 && saniye>59)
+    {saat++;
+    dakika=0;
+    saniye=0;}
+    if(saat >23)
+    {saat=0;}
+
+    if(saat<10){
+document.getElementById('saat').innerHTML="0"+saat;
+}
+
+    if(saniye<10){
+document.getElementById('saniye').innerHTML="0"+saniye;}
+
+if(dakika<10){
+document.getElementById('dakika').innerHTML="0"+dakika;}
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
